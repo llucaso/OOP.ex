@@ -11,8 +11,14 @@ Telefon.prototype.chargingCounter = function() {
 };
 
 Telefon.prototype.printInfo = function() {
-	console.log("Marka telefonu to " + this.marka + ", kolor to " + this.kolor + ", a cena to " + this.cena + ".");
+	console.log("Marka telefonu to " + this.marka + ", kolor to " + this.kolor + ", a cena to " + this.cena + "." + " Koszt dodatkowej gwarancji wynosi " + this.getWarrantyCost());
 };
+
+Telefon.prototype.getWarrantyCost = function() {
+	var warranty = this.cena * 0.1;
+	return warranty;
+};
+
 
 var iPhone6s = new Telefon("Apple", 2250, "srebrny", 3500);	
 var SamsungGalaxyS6 = new Telefon("Samsung", 1700, "czerwony", 2500);
