@@ -2,16 +2,16 @@
 
   // Project configuration.
   grunt.initConfig({
-  	sass: {
-  		options: {
-  			sourceMap: true
-  		},
-  		dist: {
-  			files: {
-  				'css/style.css': 'sass/style.sass'
-  			}
-  		}
-  	},
+    sass: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: {
+          'css/style.css': 'sass/style.sass'
+        }
+      }
+    },
 
   watch: {
     scripts: {
@@ -22,6 +22,7 @@
         },
     } 
   },
+
 
 
   });

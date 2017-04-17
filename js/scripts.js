@@ -8,11 +8,10 @@
 			str += chars[Math.floor(Math.random() * chars.length)];						//+= zmienna + 1
 		}
 		return str;
-	}
+	};
 
 	function Column(name) {
 		var self = this;																//przyda sie dla funkcji zagniezdzonych
-
 		this.id = randomString();
 		this.name = name;
 		this.$element = createColumn();
@@ -38,13 +37,13 @@
 			return $column;																//bez tego nie mam odniesienia do stworzonego elementu tam gdzie wywoluje funkcje
 
 
-		}
-	}
+		};
+	};
 
 	Column.prototype = {
 		addCard: function(card) {
 			this.$element.children('ul').append(card.$element);
-		},																				//czemu przecinek
+		},													
 		removeColumn: function() {
 			this.$element.remove();
 		}
@@ -71,8 +70,8 @@
 			$card.append($cardDelete)
 				.append($cardDescription);
 			return $card;
-	}
-	}
+		};
+	};
 
 	Card.prototype =  {
 		removeCard: function() {
@@ -96,32 +95,29 @@
 	}).disableSelection();
 	}
 
+	$('.create-column')
+		.click(function() {
+			var name = prompt('Wpisz nazwe kolumny');
+			var column = new Column(name);
+			board.addColumn(column);
+		});
 
+	// TWORZENIE KOLUMN
+	var todoColumn = new Column('Do zrobienia');
+	var doingColumn = new Column('W trakcie');
+	var doneColumn = new Column('Skończone');
 
+// DODAWANIE KOLUMN DO TABLICY
+	board.addColumn(todoColumn);
+	board.addColumn(doingColumn);
+	board.addColumn(doneColumn);
 
+// TWORZENIE NOWYCH EGZEMPLARZY KART
+	var card1 = new Card('Nowe zadanie');
+	var card2 = new Card('Stworzyc tablice kanban');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// DODAWANIE KART DO KOLUMN
+	todoColumn.addCard(card1);
+	doingColumn.addCard(card2);
+	
 });

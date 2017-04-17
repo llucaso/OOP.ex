@@ -1,8 +1,73 @@
-﻿body
-	background-color: black
+﻿$color-opa: rgba(255, 255, 255, 0.5)
+
+=border-radius($radius)
+	-webkit-border-radius:	$radius
+	-moz-border-radius:		$radius
+	-ms-border-radius:		$radius
+	border-radius:			$radius
+
+*
+	margin: 0px auto
+	padding: 0px
+	box-sizing: border-box
+
+body
+	background-image: url(https://static.pexels.com/photos/218434/pexels-photo-218434.jpeg)
+	background-size: cover
+	background-repeat: no-repeat
+	text-align: center
+
+.board
+	width: 80%
+	text-align: center
 
 h1
-	color: white
+	background-color: $color-opa
+	padding: 25px
+	margin-top: 25px
+	+border-radius(10px)
 
-.card-placeholder
-	background: red
+.column-container
+	display: flex
+	justify-content: space-around
+	padding: 30px
+
+.column
+	margin: 30px
+	width: 300px
+	min-height: 300px
+	background-color: $color-opa
+	+border-radius(10px)
+
+.add-card
+	padding: 10px
+	background-color: $color-opa
+	+border-radius(10px)
+
+.btn-delete
+	float: right
+
+.card-placeholder //nie dziala
+	color: red
+
+.column-card-list
+	min-height: 250px
+	min-width: 270px
+
+.card-description
+	background-color: rgba(255, 170, 170, 0.5)
+	list-style: none
+	width: 250px
+	height: 200px
+	margin: 10px
+	+border-radius(10px)
+
+.create-column
+	padding: 25px
+	margin: 20px
+	+border-radius(10px)
+	background-color: $color-opa
+
+ul
+	list-style-type: none
+
