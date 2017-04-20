@@ -1,4 +1,4 @@
-﻿$(function() {
+$(function() {
 
 	function randomString() {
 		var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
@@ -26,17 +26,20 @@
 			$columnDelete.click(function() {											//funkcja w funkcji? kasowanie kolumny po kliknieciu
 				self.removeColumn();
 			});
-			$columnAddCard.click(function() {											//dodawanie karteczki po kliknieciu
-				self.addCard(new Card(prompt('Card name')));
+
+			$columnAddCard.click(function() {
+				var cardName = prompt('Card name');
+				if (cardName) {
+					self.addCard(new Card(cardName));
+				}
 			});
+
 			//konstruowanie elmentu kolumny
 			$column.append($columnTitle);
 			$column.append($columnDelete);
 			$column.append($columnAddCard);
 			$column.append($columnCardList);
 			return $column;																//bez tego nie mam odniesienia do stworzonego elementu tam gdzie wywoluje funkcje
-
-
 		};
 	};
 
@@ -48,7 +51,6 @@
 			this.$element.remove();
 		}
 	};
-
 
 	function Card(description) {
 		var self = this;
