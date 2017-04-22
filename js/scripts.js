@@ -101,7 +101,10 @@ $(function() {
 		.click(function() {
 			var name = prompt('Wpisz nazwe kolumny');
 			var column = new Column(name);
+			if (name) {
 			board.addColumn(column);
+		}
+
 		});
 
 	// TWORZENIE KOLUMN
